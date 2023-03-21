@@ -228,3 +228,5 @@ def get_angle(mob: VMobject) -> None:
         mob.angle = angle_between_vectors(vec1, vec2)
     elif isinstance(mob, Line):
         mob.angle = mob.get_angle()
+
+def add_osilation_move()

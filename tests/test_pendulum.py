@@ -1,6 +1,6 @@
 from manim import *
 from manim_physics import *
-
+config.background_color = WHITE
 
 class PendulumExample(SpaceScene):
     def construct(self):
@@ -20,3 +20,10 @@ class MultiPendulumExample(SpaceScene):
         p.start_swinging()
         self.add(TracedPath(p.bobs[-1].get_center, stroke_color=BLUE))
         self.wait(10)
+
+class SpringExample(SpaceScene):
+    def construct(self):
+        spring = Spring(start = RIGHT, length = 2*2,color = RED)
+        d1 = Dot(color=BLACK).move_to(spring.get_start())
+        d2 = Dot(color=BLACK).move_to(spring.get_end())
+        self.add(spring,d1,d2)
